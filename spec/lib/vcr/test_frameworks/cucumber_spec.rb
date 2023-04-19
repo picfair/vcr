@@ -79,7 +79,7 @@ RSpec.describe VCR::CucumberTags do
             cucumber_v4_scenario = double(:name => "My scenario name", :failed? => false,
                                           :location => double(:file => "dir1/dir2/feature_file_name.feature",
                                                               :lines => double(:min => 10, :max => 10)))
-            test_tag(:name, 'tag1', 'feature_file_name/My scenario name', cucumber_v4_scenario)
+            test_tag(:name, 'tag1', 'dir1/dir2/feature_file_name.feature/My scenario name', cucumber_v4_scenario)
           end
 
           it 'makes a unique name for each row of the examples' do
@@ -88,7 +88,7 @@ RSpec.describe VCR::CucumberTags do
             cucumber_v4_scenario = double(:name => "My scenario name", :failed? => false,
                                           :location => double(:file => "dir1/dir2/feature_file_name.feature",
                                                               :lines => double(:min => 10, :max => 15)))
-            test_tag(:name, 'tag1', 'feature_file_name/My scenario name/Example at line 15', cucumber_v4_scenario)
+            test_tag(:name, 'tag1', 'dir1/dir2/feature_file_name.feature/My scenario name/Example at line 15', cucumber_v4_scenario)
           end
         end
 
